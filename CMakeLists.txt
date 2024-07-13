@@ -30,7 +30,7 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Src)
 #        QT_MESSAGELOGCONTEXT
 #)
 
-if (FLUENTUI_BUILD_EXAMPLES)
+if (LINGMOUI_BUILD_EXAMPLES)
     # add_subdirectory(example)
 endif ()
 
