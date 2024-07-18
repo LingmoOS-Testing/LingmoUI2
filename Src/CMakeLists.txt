@@ -43,6 +43,11 @@ endforeach (filepath)
 
 message(STATUS "Current Qt Version: ${QT_VERSION}")
 if (QT_VERSION VERSION_GREATER_EQUAL "6.2")
+
+    if (NOT LINGMOUI_BUILD_STATIC_LIB)
+            list(REMOVE_ITEM sources_files LingmoUI.hpp LingmoUI.cpp)
+    endif ()
+
     #遍历所有qml文件
     file(GLOB_RECURSE QML_PATHS *.qml qmldir)
     foreach (filepath ${QML_PATHS})
@@ -113,7 +118,11 @@ if (QT_VERSION VERSION_GREATER_EQUAL "6.2")
             RESOURCE_PREFIX "/qt/qml"
     )
 else ()
-    message(FATAL_ERROR "LingmoUI requires Qt version >= 6.2!")
+    message(FATAL_ERROR "Li
+        SOURCES stdafx.hpp
+        SOURCES LingmoApp.hpp
+        SOURCES LingmoApp.cpp
+        SOURCES singleton.hppngmoUI requires Qt version >= 6.2!")
 endif ()
 
 #安装
